@@ -1,5 +1,6 @@
 /* Header and Mega-Nav */
 #header {
+    color: var(--color-accent-dark);
     padding-top: 1em;
     position: relative;
 }
@@ -41,6 +42,9 @@
     z-index: 1;
     width: 100%;
 }
+#header-nav h1 {
+    font-size: inherit;
+}
 #header-logo a {
     align-items: center;
     color: inherit;
@@ -72,8 +76,10 @@
     position: absolute;
     width: 100%;
 }
-.megamenu-navitem {
-    color: var(--color-accent-dark);
+button.megamenu-navitem {
+    background-color: transparent;
+    border: 0;
+    color: inherit;
     cursor: pointer;
     font-size: 0.9rem;
     padding: 1.9em;
@@ -85,7 +91,7 @@
 .megamenu-submenu {
     background-color: var(--bgcolor-menu);
     color: var(--color-primary-light);
-    display: flex;
+    display: none;
     font-size: 0.85rem;
     height: 0;
     left: 0;
@@ -95,15 +101,19 @@
     position: absolute;
     width: 100%;
 }
+.megamenu-section:focus-within .megamenu-navitem,
 .megamenu-section:hover .megamenu-navitem {
     background-color: #f2f2f3;
 }
+.megamenu-section.active .megamenu-submenu,
 .megamenu-section:hover .megamenu-submenu {
+    display: flex;
     height: 225px;
     opacity: 1;
     overflow: hidden;
     z-index: 1;
 }
+.megamenu-section.active .megamenu-navitem:after,
 .megamenu-section:hover .megamenu-navitem:after {
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
